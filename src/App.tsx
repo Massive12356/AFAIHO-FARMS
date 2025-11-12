@@ -8,6 +8,7 @@ import About from './pages/About';
 import Products from './pages/Products';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const isDark = useThemeStore((state) => state.isDark);
@@ -44,6 +45,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
         <Navbar />
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
