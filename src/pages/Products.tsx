@@ -4,6 +4,10 @@ import { Search, Leaf, Wheat, Egg, Beef, Truck, Award, Shield, Calendar } from '
 import { products, Product } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import SectionTitle from '../components/SectionTitle';
+import bgImage from '../public/images/pImage.jpeg'
+import p1 from '../public/images/5.jpeg'
+import p2 from '../public/images/8.jpeg'
+
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -65,10 +69,7 @@ export default function Products() {
     <div className="min-h-screen pt-16 bg-gray-50 dark:bg-gray-900">
       <section
         className="relative h-80 flex items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage:
-            'url(https://images.pexels.com/photos/1459339/pexels-photo-1459339.jpeg?auto=compress&cs=tinysrgb&w=1920)',
-        }}
+        style={{ backgroundImage: `url(${bgImage})` }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <motion.div
@@ -78,7 +79,9 @@ export default function Products() {
           className="relative z-10 text-center text-white px-4"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-4">Our Products</h1>
-          <p className="text-xl text-gray-200">Fresh, organic, and locally grown from our mixed farm</p>
+          <p className="text-xl text-gray-200">
+            Fresh, organic, and locally grown from our mixed farm
+          </p>
         </motion.div>
       </section>
 
@@ -106,8 +109,8 @@ export default function Products() {
                       onClick={() => setSelectedCategory(category)}
                       className={`px-6 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                         selectedCategory === category
-                          ? 'bg-green-600 text-white'
-                          : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                          ? "bg-green-600 text-white"
+                          : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
                       }`}
                     >
                       {Icon && <Icon className="w-4 h-4" />}
@@ -121,7 +124,8 @@ export default function Products() {
 
           <div className="mb-6">
             <p className="text-gray-600 dark:text-gray-400">
-              Showing {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}
+              Showing {filteredProducts.length}{" "}
+              {filteredProducts.length === 1 ? "product" : "products"}
             </p>
           </div>
 
@@ -148,46 +152,68 @@ export default function Products() {
       {/* Seasonal Products Section */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
         {/* Animated sketch elements for seasonal section */}
-        <motion.div 
+        <motion.div
           className="absolute top-10 left-10 w-32 h-32 opacity-25 dark:opacity-20"
-          animate={{ 
+          animate={{
             rotate: [0, 360],
           }}
-          transition={{ 
+          transition={{
             duration: 15,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
         >
           <svg viewBox="0 0 100 100" className="w-full h-full">
-            <circle cx="50" cy="50" r="45" stroke="#10b981" strokeWidth="3" fill="none" />
-            <path d="M30,50 Q50,30 70,50 T90,70" stroke="#10b981" strokeWidth="3" fill="none" />
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
+            <path
+              d="M30,50 Q50,30 70,50 T90,70"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
             <circle cx="50" cy="50" r="8" fill="#10b981" />
           </svg>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="absolute bottom-10 right-10 w-40 h-40 opacity-25 dark:opacity-20"
-          animate={{ 
+          animate={{
             y: [0, -20, 0],
             x: [0, 20, 0, -20, 0],
           }}
-          transition={{ 
+          transition={{
             duration: 8,
             repeat: Infinity,
           }}
         >
           <svg viewBox="0 0 100 100" className="w-full h-full">
-            <path d="M20,50 Q40,30 60,50 T100,50" stroke="#10b981" strokeWidth="3" fill="none" />
-            <path d="M30,60 Q50,40 70,60" stroke="#10b981" strokeWidth="3" fill="none" />
+            <path
+              d="M20,50 Q40,30 60,50 T100,50"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
+            <path
+              d="M30,60 Q50,40 70,60"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
             <circle cx="40" cy="50" r="5" fill="#10b981" />
             <circle cx="60" cy="50" r="5" fill="#10b981" />
           </svg>
         </motion.div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
-          <SectionTitle 
-            title="Seasonal Highlights" 
+          <SectionTitle
+            title="Seasonal Highlights"
             subtitle="What's fresh this season"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -200,22 +226,26 @@ export default function Products() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white dark:bg-gray-900 rounded-xl shadow-md overflow-hidden"
               >
-                <div className={`h-40 bg-gradient-to-r ${season.color} flex items-center p-4 relative`}>
-                  <img 
-                    src={season.image} 
-                    alt={season.name} 
+                <div
+                  className={`h-40 bg-gradient-to-r ${season.color} flex items-center p-4 relative`}
+                >
+                  <img
+                    src={season.image}
+                    alt={season.name}
                     className="absolute inset-0 w-full h-full object-cover opacity-20"
                   />
                   <div className="flex items-center relative z-10">
                     <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/50 mr-4">
-                      <img 
-                        src={season.image} 
-                        alt={season.name} 
+                      <img
+                        src={season.image}
+                        alt={season.name}
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white">{season.name}</h3>
+                      <h3 className="text-xl font-bold text-white">
+                        {season.name}
+                      </h3>
                       <p className="text-green-100">Currently Available</p>
                     </div>
                   </div>
@@ -224,8 +254,18 @@ export default function Products() {
                   <ul className="text-gray-600 dark:text-gray-400 space-y-2">
                     {season.products.map((product, idx) => (
                       <li key={idx} className="flex items-center">
-                        <svg className="w-4 h-4 text-green-600 dark:text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                        <svg
+                          className="w-4 h-4 text-green-600 dark:text-green-400 mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M5 13l4 4L19 7"
+                          ></path>
                         </svg>
                         <span>{product}</span>
                       </li>
@@ -241,44 +281,72 @@ export default function Products() {
       {/* Quality Assurance Section */}
       <section className="py-20 px-4 bg-white dark:bg-gray-800 relative overflow-hidden">
         {/* Animated sketch elements for quality section */}
-        <motion.div 
+        <motion.div
           className="absolute top-10 right-10 w-24 h-24 opacity-25 dark:opacity-20"
-          animate={{ 
+          animate={{
             scale: [1, 1.3, 1],
           }}
-          transition={{ 
+          transition={{
             duration: 5,
             repeat: Infinity,
           }}
         >
           <svg viewBox="0 0 100 100" className="w-full h-full">
-            <path d="M30,30 Q50,10 70,30 T90,50" stroke="#10b981" strokeWidth="3" fill="none" />
-            <path d="M20,50 Q40,30 60,50 T80,70" stroke="#10b981" strokeWidth="3" fill="none" />
+            <path
+              d="M30,30 Q50,10 70,30 T90,50"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
+            <path
+              d="M20,50 Q40,30 60,50 T80,70"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
             <circle cx="40" cy="40" r="6" fill="#10b981" />
             <circle cx="60" cy="60" r="6" fill="#10b981" />
           </svg>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="absolute bottom-10 left-10 w-32 h-32 opacity-25 dark:opacity-20"
-          animate={{ 
+          animate={{
             rotate: [0, 15, 0, -15, 0],
           }}
-          transition={{ 
+          transition={{
             duration: 7,
             repeat: Infinity,
           }}
         >
           <svg viewBox="0 0 100 100" className="w-full h-full">
-            <circle cx="50" cy="50" r="45" stroke="#10b981" strokeWidth="3" fill="none" />
-            <circle cx="50" cy="50" r="35" stroke="#10b981" strokeWidth="3" fill="none" />
-            <path d="M50,10 L50,90 M10,50 L90,50" stroke="#10b981" strokeWidth="3" />
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="35"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
+            <path
+              d="M50,10 L50,90 M10,50 L90,50"
+              stroke="#10b981"
+              strokeWidth="3"
+            />
           </svg>
         </motion.div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
-          <SectionTitle 
-            title="Quality Assurance" 
+          <SectionTitle
+            title="Quality Assurance"
             subtitle="Our commitment to excellence and safety"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -296,10 +364,11 @@ export default function Products() {
                 Certified Organic
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
-                All our products are certified organic by recognized authorities, ensuring the highest standards.
+                All our products are certified organic by recognized
+                authorities, ensuring the highest standards.
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -314,10 +383,11 @@ export default function Products() {
                 Food Safety
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Rigorous testing and quality control measures ensure our products are safe for your family.
+                Rigorous testing and quality control measures ensure our
+                products are safe for your family.
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -332,10 +402,11 @@ export default function Products() {
                 Sustainable Practices
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Environmentally responsible farming methods that protect our planet for future generations.
+                Environmentally responsible farming methods that protect our
+                planet for future generations.
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -350,7 +421,8 @@ export default function Products() {
                 Fresh Harvest
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Products harvested at peak ripeness and delivered to you within 24-48 hours for maximum freshness.
+                Products harvested at peak ripeness and delivered to you within
+                24-48 hours for maximum freshness.
               </p>
             </motion.div>
           </div>
@@ -360,44 +432,65 @@ export default function Products() {
       {/* Farm to Table Section */}
       <section className="py-20 px-4 bg-green-600 text-white relative overflow-hidden">
         {/* Animated sketch elements for farm-to-table section */}
-        <motion.div 
+        <motion.div
           className="absolute top-10 left-10 w-40 h-40 opacity-25"
-          animate={{ 
+          animate={{
             x: [0, 25, 0, -25, 0],
           }}
-          transition={{ 
+          transition={{
             duration: 6,
             repeat: Infinity,
           }}
         >
           <svg viewBox="0 0 100 100" className="w-full h-full">
-            <path d="M20,50 Q40,30 60,50 T100,50" stroke="white" strokeWidth="3" fill="none" />
-            <path d="M20,60 Q40,40 60,60 T100,60" stroke="white" strokeWidth="3" fill="none" />
+            <path
+              d="M20,50 Q40,30 60,50 T100,50"
+              stroke="white"
+              strokeWidth="3"
+              fill="none"
+            />
+            <path
+              d="M20,60 Q40,40 60,60 T100,60"
+              stroke="white"
+              strokeWidth="3"
+              fill="none"
+            />
             <circle cx="30" cy="50" r="5" fill="white" />
             <circle cx="50" cy="50" r="5" fill="white" />
             <circle cx="70" cy="50" r="5" fill="white" />
           </svg>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="absolute bottom-10 right-10 w-32 h-32 opacity-25"
-          animate={{ 
+          animate={{
             rotate: [0, 360],
             scale: [1, 1.2, 1],
           }}
-          transition={{ 
+          transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
         >
           <svg viewBox="0 0 100 100" className="w-full h-full">
-            <circle cx="50" cy="50" r="40" stroke="white" strokeWidth="3" fill="none" />
-            <path d="M50,20 L50,80 M20,50 L80,50" stroke="white" strokeWidth="3" />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              stroke="white"
+              strokeWidth="3"
+              fill="none"
+            />
+            <path
+              d="M50,20 L50,80 M20,50 L80,50"
+              stroke="white"
+              strokeWidth="3"
+            />
             <circle cx="50" cy="50" r="10" fill="white" />
           </svg>
         </motion.div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -410,21 +503,30 @@ export default function Products() {
                 From Our Farm to Your Table
               </h2>
               <p className="text-green-50 text-lg mb-6">
-                We believe in complete transparency in our farming and production processes. 
-                Know exactly where your food comes from and how it's produced.
+                We believe in complete transparency in our farming and
+                production processes. Know exactly where your food comes from
+                and how it's produced.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <span className="text-green-200 mr-3">•</span>
-                  <span>Farm visits available by appointment to see our practices firsthand</span>
+                  <span>
+                    Farm visits available by appointment to see our practices
+                    firsthand
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-200 mr-3">•</span>
-                  <span>Detailed information about growing/harvesting dates on all products</span>
+                  <span>
+                    Detailed information about growing/harvesting dates on all
+                    products
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-200 mr-3">•</span>
-                  <span>Direct relationship with our farmers and producers</span>
+                  <span>
+                    Direct relationship with our farmers and producers
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-200 mr-3">•</span>
@@ -443,7 +545,9 @@ export default function Products() {
                 <Truck className="w-12 h-12 text-green-200 mr-4" />
                 <div>
                   <h3 className="text-2xl font-bold">Delivery & Pickup</h3>
-                  <p className="text-green-100">Fresh to your door or farm pickup</p>
+                  <p className="text-green-100">
+                    Fresh to your door or farm pickup
+                  </p>
                 </div>
               </div>
               <div className="space-y-4">
@@ -472,45 +576,72 @@ export default function Products() {
       {/* Testimonials Section */}
       <section className="py-20 px-4 bg-white dark:bg-gray-800 relative overflow-hidden">
         {/* Animated sketch elements for testimonials section */}
-        <motion.div 
+        <motion.div
           className="absolute top-10 right-10 w-32 h-32 opacity-25 dark:opacity-20"
-          animate={{ 
+          animate={{
             y: [0, -25, 0],
           }}
-          transition={{ 
+          transition={{
             duration: 5,
             repeat: Infinity,
           }}
         >
           <svg viewBox="0 0 100 100" className="w-full h-full">
-            <path d="M20,50 Q40,30 60,50 T100,50" stroke="#10b981" strokeWidth="3" fill="none" />
-            <path d="M30,60 Q50,40 70,60" stroke="#10b981" strokeWidth="3" fill="none" />
+            <path
+              d="M20,50 Q40,30 60,50 T100,50"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
+            <path
+              d="M30,60 Q50,40 70,60"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
             <circle cx="40" cy="50" r="6" fill="#10b981" />
             <circle cx="60" cy="50" r="6" fill="#10b981" />
           </svg>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="absolute bottom-10 left-10 w-40 h-40 opacity-25 dark:opacity-20"
-          animate={{ 
+          animate={{
             rotate: [0, 15, 0, -15, 0],
             scale: [1, 1.2, 1],
           }}
-          transition={{ 
+          transition={{
             duration: 8,
             repeat: Infinity,
           }}
         >
           <svg viewBox="0 0 100 100" className="w-full h-full">
-            <circle cx="50" cy="50" r="45" stroke="#10b981" strokeWidth="3" fill="none" />
-            <path d="M30,30 Q50,50 70,30" stroke="#10b981" strokeWidth="3" fill="none" />
-            <path d="M30,70 Q50,50 70,70" stroke="#10b981" strokeWidth="3" fill="none" />
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
+            <path
+              d="M30,30 Q50,50 70,30"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
+            <path
+              d="M30,70 Q50,50 70,70"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
           </svg>
         </motion.div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
-          <SectionTitle 
-            title="What Our Customers Say" 
+          <SectionTitle
+            title="What Our Customers Say"
             subtitle="Hear from our valued community"
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -526,23 +657,32 @@ export default function Products() {
                   S
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white">Sarah Johnson</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Local Chef</p>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">
+                    Sarah Johnson
+                  </h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Local Chef
+                  </p>
                 </div>
               </div>
               <p className="text-gray-600 dark:text-gray-300 italic">
-                "The quality and freshness of GreenValley Farm products have transformed my restaurant's menu. 
-                My customers constantly ask about our suppliers, and I'm proud to recommend your farm."
+                "The quality and freshness of GreenValley Farm products have
+                transformed my restaurant's menu. My customers constantly ask
+                about our suppliers, and I'm proud to recommend your farm."
               </p>
               <div className="flex mt-4">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                  <svg
+                    key={i}
+                    className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                   </svg>
                 ))}
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -555,24 +695,33 @@ export default function Products() {
                   M
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white">Michael Torres</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Weekly Customer</p>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">
+                    Michael Torres
+                  </h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Weekly Customer
+                  </p>
                 </div>
               </div>
               <p className="text-gray-600 dark:text-gray-300 italic">
-                "As a family of four, we've been getting our produce from GreenValley for two years. 
-                The difference in taste and quality compared to supermarket produce is remarkable. 
-                Our kids actually ask for vegetables now!"
+                "As a family of four, we've been getting our produce from
+                GreenValley for two years. The difference in taste and quality
+                compared to supermarket produce is remarkable. Our kids actually
+                ask for vegetables now!"
               </p>
               <div className="flex mt-4">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                  <svg
+                    key={i}
+                    className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                   </svg>
                 ))}
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -585,19 +734,28 @@ export default function Products() {
                   R
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white">Robert Chen</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Health Enthusiast</p>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">
+                    Robert Chen
+                  </h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Health Enthusiast
+                  </p>
                 </div>
               </div>
               <p className="text-gray-600 dark:text-gray-300 italic">
-                "After switching to GreenValley Farm products, I've noticed a significant improvement 
-                in my family's health and energy levels. Knowing exactly where our food comes from 
-                gives us peace of mind we never had with store-bought produce."
+                "After switching to GreenValley Farm products, I've noticed a
+                significant improvement in my family's health and energy levels.
+                Knowing exactly where our food comes from gives us peace of mind
+                we never had with store-bought produce."
               </p>
               <div className="flex mt-4">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" viewBox="0 0 24 24">
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                  <svg
+                    key={i}
+                    className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                   </svg>
                 ))}
               </div>
@@ -608,43 +766,78 @@ export default function Products() {
 
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
         {/* Animated sketch elements for mixed farming section */}
-        <motion.div 
+        <motion.div
           className="absolute top-10 left-10 w-40 h-40 opacity-25 dark:opacity-20"
-          animate={{ 
+          animate={{
             rotate: [0, 360],
           }}
-          transition={{ 
+          transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
         >
           <svg viewBox="0 0 100 100" className="w-full h-full">
-            <circle cx="50" cy="50" r="45" stroke="#10b981" strokeWidth="3" fill="none" />
-            <circle cx="50" cy="50" r="35" stroke="#10b981" strokeWidth="3" fill="none" />
-            <circle cx="50" cy="50" r="25" stroke="#10b981" strokeWidth="3" fill="none" />
-            <path d="M50,10 L50,90 M10,50 L90,50" stroke="#10b981" strokeWidth="3" />
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="35"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="25"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
+            <path
+              d="M50,10 L50,90 M10,50 L90,50"
+              stroke="#10b981"
+              strokeWidth="3"
+            />
           </svg>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="absolute bottom-10 right-10 w-32 h-32 opacity-25 dark:opacity-20"
-          animate={{ 
+          animate={{
             y: [0, -20, 0],
             x: [0, 20, 0, -20, 0],
           }}
-          transition={{ 
+          transition={{
             duration: 6,
             repeat: Infinity,
           }}
         >
           <svg viewBox="0 0 100 100" className="w-full h-full">
-            <path d="M30,70 Q50,30 70,70" stroke="#10b981" strokeWidth="3" fill="none" />
-            <path d="M40,60 Q50,40 60,60" stroke="#10b981" strokeWidth="3" fill="none" />
+            <path
+              d="M30,70 Q50,30 70,70"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
+            <path
+              d="M40,60 Q50,40 60,60"
+              stroke="#10b981"
+              strokeWidth="3"
+              fill="none"
+            />
             <circle cx="50" cy="50" r="8" fill="#10b981" />
           </svg>
         </motion.div>
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <SectionTitle
             title="Our Mixed Farming Approach"
@@ -657,11 +850,15 @@ export default function Products() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Sustainable Integration</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                Sustainable Integration
+              </h3>
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                Our mixed farming system creates a closed-loop ecosystem where crops and livestock support each other. 
-                Livestock provide natural fertilizer for crops, while crop residues feed our animals. This symbiotic 
-                relationship reduces waste, improves soil health, and produces higher quality products.
+                Our mixed farming system creates a closed-loop ecosystem where
+                crops and livestock support each other. Livestock provide
+                natural fertilizer for crops, while crop residues feed our
+                animals. This symbiotic relationship reduces waste, improves
+                soil health, and produces higher quality products.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -669,9 +866,12 @@ export default function Products() {
                     <Leaf className="w-4 h-4 text-green-600 dark:text-green-400" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white">Crop Rotation Benefits</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white">
+                      Crop Rotation Benefits
+                    </h4>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      Different crops are rotated seasonally to maintain soil fertility and prevent pest buildup
+                      Different crops are rotated seasonally to maintain soil
+                      fertility and prevent pest buildup
                     </p>
                   </div>
                 </div>
@@ -680,9 +880,12 @@ export default function Products() {
                     <Beef className="w-4 h-4 text-green-600 dark:text-green-400" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white">Livestock Integration</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white">
+                      Livestock Integration
+                    </h4>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      Animals graze on rotated pastures and provide natural fertilizer for crop fields
+                      Animals graze on rotated pastures and provide natural
+                      fertilizer for crop fields
                     </p>
                   </div>
                 </div>
@@ -696,13 +899,13 @@ export default function Products() {
               className="grid grid-cols-2 gap-4"
             >
               <img
-                src="https://images.pexels.com/photos/169523/pexels-photo-169523.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={p1}
                 alt="Farm integration"
                 className="rounded-lg shadow-lg w-full h-64 object-cover"
                 loading="lazy"
               />
               <img
-                src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={p2}
                 alt="Mixed farming"
                 className="rounded-lg shadow-lg w-full h-64 object-cover mt-8"
                 loading="lazy"
@@ -717,20 +920,20 @@ export default function Products() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: 'Organic Certified',
-                description: 'All products are 100% organic and chemical-free',
+                title: "Organic Certified",
+                description: "All products are 100% organic and chemical-free",
               },
               {
-                title: 'Locally Grown',
-                description: 'Fresh from our farm to your table',
+                title: "Locally Grown",
+                description: "Fresh from our farm to your table",
               },
               {
-                title: 'Sustainable',
-                description: 'Eco-friendly farming practices',
+                title: "Sustainable",
+                description: "Eco-friendly farming practices",
               },
               {
-                title: 'Quality Assured',
-                description: 'Rigorous quality control standards',
+                title: "Quality Assured",
+                description: "Rigorous quality control standards",
               },
             ].map((item, index) => (
               <motion.div
@@ -744,7 +947,9 @@ export default function Products() {
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {item.description}
+                </p>
               </motion.div>
             ))}
           </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sprout } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import DarkModeToggle from './DarkModeToggle';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../public/logo.png'

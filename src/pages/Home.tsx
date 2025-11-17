@@ -528,15 +528,11 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="grid grid-cols-1 md:grid-cols-3 gap-4"
             >
-              {seasonalHighlights.map((season, index) => (
+              {seasonalHighlights.map((season) => (
                 <motion.div
-                  key={season.season}
+                  key={season.season} 
                   whileHover={{ y: -5 }}
-                  className={`rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg ${
-                    currentSeason === season.season
-                      ? "ring-2 ring-green-500"
-                      : ""
-                  }`}
+                  className={`rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg ${currentSeason === season.season ? 'ring-2 ring-green-500' : ''}`}
                 >
                   <div
                     className={`h-24 bg-gradient-to-r ${season.color} flex items-center p-4 relative`}

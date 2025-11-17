@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, TrendingUp, Users, Leaf, TreePine, Wheat } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
+import p1 from '../public/images/18.jpeg'
+import p2 from '../public/images/24.jpg'
+import p3 from '../public/images/1.jpeg'
+import aboutImage from '../public/images/abImage.jpeg'
 
 export default function About() {
   const values = [
@@ -46,10 +50,7 @@ export default function About() {
     <div className="min-h-screen pt-16">
       <section
         className="relative h-96 flex items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url(https://images.pexels.com/photos/2132250/pexels-photo-2132250.jpeg?auto=compress&cs=tinysrgb&w=1920)",
-        }}
+        style={{ backgroundImage: `url(${aboutImage})` }} // ✅
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <motion.div
@@ -169,13 +170,13 @@ export default function About() {
               className="grid grid-cols-2 gap-4"
             >
               <img
-                src="https://images.pexels.com/photos/169523/pexels-photo-169523.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={p2}
                 alt="Farm worker"
                 className="rounded-lg shadow-lg w-full h-64 object-cover"
                 loading="lazy"
               />
               <img
-                src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={p1}
                 alt="Farm animals"
                 className="rounded-lg shadow-lg w-full h-64 object-cover mt-8"
                 loading="lazy"
@@ -519,14 +520,14 @@ export default function About() {
             className="bg-white dark:bg-gray-900 rounded-xl p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center"
           >
             <img
-              src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src={p3}
               alt="John Henderson"
               className="w-48 h-48 rounded-full object-cover shadow-lg"
               loading="lazy"
             />
             <div className="flex-1">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                John Henderson
+                Maxwell
               </h3>
               <p className="text-green-600 dark:text-green-400 font-semibold mb-4">
                 Founder & Head Farmer

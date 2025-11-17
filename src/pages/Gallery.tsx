@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Camera, Leaf, Users } from 'lucide-react';
 import { galleryImages } from '../data/galleryImages';
+import farmBackground from '../public/images/1.jpeg';
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [filter, setFilter] = useState<string>('All');
 
-  const categories = ['All', 'Farm', 'Produce', 'Livestock', 'Workers'];
+  // Updated categories to include all available categories
+  const categories = ['All', 'Farm', 'Workers', 'Produce', 'Livestock', 'Dairy', 'Poultry'];
 
   const filteredImages =
     filter === 'All'
@@ -19,8 +21,7 @@ export default function Gallery() {
       <section
         className="relative h-80 flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage:
-            'url(https://images.pexels.com/photos/96715/pexels-photo-96715.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+          backgroundImage: `url(${farmBackground})`,
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
