@@ -20,7 +20,7 @@ export default function Footer() {
               <Link to="/" className="flex items-center space-x-2 group">
                 <img src={logo} alt="logo" className="w-14 h-13 bg-contain " />
               </Link>
-              <span className="text-xl font-bold text-white">AFAIHO FARMS</span>
+              <span className="text-xl font-bold text-white">AFIAHO FARMS</span>
             </div>
             <p className="text-sm text-gray-400 mb-4">
               Committed to sustainable farming practices and delivering fresh,
@@ -92,7 +92,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} AFAIHO FARMS. All rights reserved.
+            &copy; {new Date().getFullYear()} AFIAHO FARMS. All rights reserved.
           </p>
         </div>
       </div>

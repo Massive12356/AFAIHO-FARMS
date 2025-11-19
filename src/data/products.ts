@@ -1,10 +1,10 @@
 // livestock
-import livesctock1 from '../public/images/8.jpeg'
-import livesctock2 from '../public/images/5.jpeg'
-import livesctock3 from '../public/images/16.jpeg'
-import livesctock4 from '../public/images/3.jpeg'
-import livesctock5 from '../public/images/21.jpeg'
-import livesctock6 from '../public/images/21.jpeg'
+import livesctock1 from '../public/images/29.jpeg'
+import livesctock2 from '../public/images/25.jpeg'
+import livesctock3 from '../public/images/26.jpeg'
+import livesctock4 from '../public/images/27.jpeg'
+import livesctock5 from '../public/images/28.jpeg'
+import livesctock6 from '../public/images/29.jpeg'
 
 // crops
 import tomatoes1 from '../public/images/toamtoes1.jpg'
@@ -79,11 +79,11 @@ export const products: Product[] = [
   },
   {
     id: 5,
-    name: "Greek Yogurt",
+    name: "Ghanaian Natural Yogurt",
     category: "Dairy",
     description:
-      "Creamy, probiotic-rich yogurt made fresh daily using traditional fermentation methods. Our dairy operation supports the farm ecosystem by integrating with our crop and livestock systems for maximum sustainability.",
-    price: "$4.99/container",
+      "Creamy, probiotic-rich yogurt made fresh daily using traditional fermentation methods with natural cow milk from our grass-fed Ghanaian cattle. Our dairy operation supports the local ecosystem by integrating with our crop and livestock systems for maximum sustainability.",
+    price: "₵45.00/container",
     image: cowmilk2,
   },
   {
@@ -169,11 +169,11 @@ export const products: Product[] = [
   },
   {
     id: 15,
-    name: "Greek Yogurt",
+    name: "Ghanaian Natural Yogurt",
     category: "Dairy",
     description:
-      "Creamy, probiotic-rich yogurt made fresh daily using traditional fermentation methods. Our dairy operation supports the farm ecosystem by integrating with our crop and livestock systems for maximum sustainability.",
-    price: "$4.99/container",
+      "Creamy, probiotic-rich yogurt made fresh daily using traditional fermentation methods with natural cow milk from our grass-fed Ghanaian cattle. Our dairy operation supports the local ecosystem by integrating with our crop and livestock systems for maximum sustainability.",
+    price: "₵45.00/container",
     image: cowmilk1,
   },
   {

@@ -6,6 +6,11 @@ import { testimonials } from '../data/testimonials';
 import ProductCard from '../components/ProductCard';
 import SectionTitle from '../components/SectionTitle';
 import { useState, useEffect } from 'react';
+import heroImage from "../public/images/maizFarm.jpg"
+import machinery1 from '../public/images/machinery1.jpg'
+import machinery2 from '../public/images/machinery2.avif'
+import machinery3 from '../public/images/machinery3.avif'
+// machinery4 and machinery5 are used in the gallery but not on the home page
 
 export default function Home() {
   const featuredProducts = products.slice(0, 6);
@@ -55,49 +60,34 @@ export default function Home() {
   // Get current season
   const getCurrentSeason = () => {
     const month = new Date().getMonth();
-    if (month >= 2 && month <= 4) return 'spring';
-    if (month >= 5 && month <= 7) return 'summer';
-    if (month >= 8 && month <= 10) return 'fall';
-    return 'winter';
+    // Ghana has two main seasons: rainy (April to October) and dry (November to March)
+    if (month >= 3 && month <= 9) return 'rainy';
+    return 'dry';
   };
 
-  const currentSeason: 'spring' | 'summer' | 'fall' | 'winter' | 'garden' = getCurrentSeason() as 'spring' | 'summer' | 'fall' | 'winter' | 'garden';
+  const currentSeason: 'rainy' | 'dry' | 'garden' = getCurrentSeason() as 'rainy' | 'dry' | 'garden';
 
   const seasonalHighlights = [
     {
-      season: 'spring',
-      name: 'Spring Harvest',
+      season: 'rainy',
+      name: 'Rainy Season Harvest',
       color: 'from-green-500 to-emerald-600',
-      image: 'https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&w=800',
-      products: ['Fresh lettuce and greens', 'Radishes and turnips', 'Fresh herbs', 'Pasture-raised eggs'],
+      image: machinery1, // Using local image instead of external URL
+      products: ['Mangoes and pawpaws', 'Pineapples and bananas', 'Okra and eggplant', 'Fresh vegetables'],
     },
     {
-      season: 'summer',
-      name: 'Summer Bounty',
+      season: 'dry',
+      name: 'Dry Season Bounty',
       color: 'from-amber-500 to-orange-600',
-      image: 'https://images.pexels.com/photos/1327838/pexels-photo-1327838.jpeg?auto=compress&cs=tinysrgb&w=800',
-      products: ['Tomatoes and peppers', 'Corn and beans', 'Berries and melons', 'Grass-fed beef'],
+      image: machinery2, // Using local image instead of external URL
+      products: ['Citrus fruits and pineapples', 'Root vegetables', 'Stored grains', 'Dried legumes'],
     },
     {
       season: 'garden',
       name: 'Garden Essentials',
       color: 'from-purple-500 to-indigo-600',
-      image: 'https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: machinery3, // Using local image instead of external URL
       products: ['Organic compost', 'Natural fertilizers', 'Seed varieties', 'Gardening tools'],
-    },
-    {
-      season: 'fall',
-      name: 'Fall Harvest',
-      color: 'from-orange-600 to-red-700',
-      image: 'https://images.pexels.com/photos/547263/pexels-photo-547263.jpeg?auto=compress&cs=tinysrgb&w=800',
-      products: ['Pumpkins and squash', 'Apples and pears', 'Root vegetables', 'Fresh dairy products'],
-    },
-    {
-      season: 'winter',
-      name: 'Winter Storage',
-      color: 'from-blue-600 to-indigo-700',
-      image: 'https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=800',
-      products: ['Stored root vegetables', 'Preserved fruits', 'Aged cheeses', 'Fresh eggs'],
     },
   ];
 
@@ -109,8 +99,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url(https://images.pexels.com/photos/2132250/pexels-photo-2132250.jpeg?auto=compress&cs=tinysrgb&w=1920)",
+            backgroundImage: `url(${heroImage})`,
           }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
@@ -123,7 +112,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            Welcome to AFAIHO FARMS
+            Welcome to AFIAHO FARMS
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -243,7 +232,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-lg text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto leading-relaxed mb-8"
           >
-            At AFAIHO FARMS, we believe in the power of sustainable agriculture.
+            At AFIAHO FARMS, we believe in the power of sustainable agriculture.
             Our mixed farming approach combines traditional methods with modern
             innovation to produce the highest quality organic crops and raise
             healthy livestock. We're committed to environmental stewardship and
@@ -453,7 +442,7 @@ export default function Home() {
             title="Seasonal Highlights"
             subtitle={`What's fresh this ${currentSeasonData.name
               .split(" ")[0]
-              .toLowerCase()}`}
+              .toLowerCase()} in Ghana`}
           />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -482,7 +471,7 @@ export default function Home() {
                   <h3 className="text-3xl font-bold mb-2">
                     {currentSeasonData.name}
                   </h3>
-                  <p className="text-xl opacity-90">Currently Available</p>
+                  <p className="text-xl opacity-90">Currently Available in Ghana</p>
                 </div>
               </div>
               <div className="p-8">
@@ -745,6 +734,160 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Farm Machinery Section */}
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+        {/* Animated sketch elements for machinery section */}
+        <motion.div
+          className="absolute top-10 left-10 w-32 h-32 opacity-20 dark:opacity-15"
+          animate={{
+            x: [0, 20, 0, -20, 0],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+          }}
+        >
+          <svg viewBox="0 0 100 100" className="w-full h-full">
+            <rect x="20" y="30" width="60" height="40" stroke="#10b981" strokeWidth="2" fill="none" />
+            <circle cx="30" cy="60" r="8" stroke="#10b981" strokeWidth="2" fill="none" />
+            <circle cx="70" cy="60" r="8" stroke="#10b981" strokeWidth="2" fill="none" />
+            <rect x="40" y="20" width="20" height="15" stroke="#10b981" strokeWidth="2" fill="none" />
+          </svg>
+        </motion.div>
+
+        <motion.div
+          className="absolute bottom-10 right-10 w-24 h-24 opacity-20 dark:opacity-15"
+          animate={{
+            rotate: [0, 15, 0, -15, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+          }}
+        >
+          <svg viewBox="0 0 100 100" className="w-full h-full">
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              stroke="#10b981"
+              strokeWidth="2"
+              fill="none"
+            />
+            <path
+              d="M30,50 L70,50 M50,30 L50,70"
+              stroke="#10b981"
+              strokeWidth="2"
+            />
+            <circle cx="50" cy="50" r="10" fill="#10b981" />
+          </svg>
+        </motion.div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <SectionTitle
+            title="Farm Machinery"
+            subtitle="Modern equipment for sustainable farming"
+          />
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-lg text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto leading-relaxed mb-12"
+          >
+            Our modern, well-maintained machinery helps us work efficiently while maintaining our commitment to sustainable farming practices. 
+            From precision planting to careful harvesting, our equipment supports our mixed farming approach.
+          </motion.p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              whileHover={{ y: -5 }}
+              className="bg-white dark:bg-gray-900 rounded-xl shadow-md overflow-hidden"
+            >
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={machinery1} 
+                  alt="Tractor plowing field" 
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Precision Farming Equipment</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Our tractors and implements help us work the land efficiently while minimizing soil compaction and fuel consumption.
+                </p>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ y: -5 }}
+              className="bg-white dark:bg-gray-900 rounded-xl shadow-md overflow-hidden"
+            >
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={machinery2} 
+                  alt="Harvesting equipment in action" 
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Harvesting Technology</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Specialized equipment for careful harvesting ensures we maintain the quality of our crops while reducing waste.
+                </p>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ y: -5 }}
+              className="bg-white dark:bg-gray-900 rounded-xl shadow-md overflow-hidden"
+            >
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={machinery3} 
+                  alt="Modern farming machinery" 
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Maintenance & Care</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Regular maintenance ensures our equipment runs efficiently and lasts longer, reducing our environmental impact.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-12 text-center"
+          >
+            <Link
+              to="/gallery"
+              className="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors group"
+            >
+              View Our Equipment Gallery
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
         {/* Animated sketch elements for testimonials section */}
@@ -822,11 +965,11 @@ export default function Home() {
             className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8 md:p-12"
           >
             <div className="flex items-center mb-6">
-              <img
-                src={testimonials[currentTestimonial].image}
-                alt={testimonials[currentTestimonial].name}
-                className="w-16 h-16 rounded-full object-cover mr-4"
-              />
+              <div className="w-16 h-16 rounded-full bg-green-600 flex items-center justify-center mr-4">
+                <span className="text-white text-2xl font-bold">
+                  {testimonials[currentTestimonial].name.split(' ').map(n => n[0]).join('')}
+                </span>
+              </div>
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
                   {testimonials[currentTestimonial].name}
@@ -837,19 +980,23 @@ export default function Home() {
               </div>
             </div>
             <div className="flex mb-4">
-              {[...Array(testimonials[currentTestimonial].rating)].map(
+              {[...Array(5)].map(
                 (_, i) => (
                   <Star
                     key={i}
-                    className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                    className={`w-5 h-5 ${i < Math.floor(testimonials[currentTestimonial].rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300 dark:text-gray-600'}`}
                   />
                 )
+              )}
+              {testimonials[currentTestimonial].rating % 1 !== 0 && (
+                <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
               )}
             </div>
             <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
               "{testimonials[currentTestimonial].content}"
             </p>
           </motion.div>
+
           <div className="flex justify-center mt-6 space-x-2">
             {testimonials.map((_, index) => (
               <button

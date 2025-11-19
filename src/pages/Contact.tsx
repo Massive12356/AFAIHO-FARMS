@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, Facebook, Twitter, Instagram, Users, Leaf, Camera } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
+import contactImage from '../public/images/contactImage.jpg'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -30,8 +31,7 @@ export default function Contact() {
       <section
         className="relative h-80 flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url(https://images.pexels.com/photos/2132250/pexels-photo-2132250.jpeg?auto=compress&cs=tinysrgb&w=1920)",
+          backgroundImage: `url(${contactImage})`,
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
@@ -42,7 +42,7 @@ export default function Contact() {
           className="relative z-10 text-center text-white px-4"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            Contact AFAIHO FARMS
+            Contact AFIAHO FARMS
           </h1>
           <p className="text-xl text-gray-200">
             We'd love to hear from you and welcome you to our farm
@@ -398,7 +398,7 @@ export default function Contact() {
                 <Leaf className="w-8 h-8 text-green-600 dark:text-green-400" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                Workshops
+                Workshops / Trainings
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
                 Participate in hands-on workshops to learn organic farming

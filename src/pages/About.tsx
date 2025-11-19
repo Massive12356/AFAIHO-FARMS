@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, TrendingUp, Users, Leaf, TreePine, Wheat } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
-import p1 from '../public/images/18.jpeg'
+import p1 from '../public/images/29.jpeg'
 import p2 from '../public/images/24.jpg'
 import p3 from '../public/images/1.jpeg'
-import aboutImage from '../public/images/abImage.jpeg'
+import aboutImage from '../public/images/Banana1.jpg'
 
 export default function About() {
   const values = [
@@ -63,7 +63,7 @@ export default function About() {
             About Our Farm
           </h1>
           <p className="text-xl text-gray-200">
-            Sustainable Mixed Farming Since 1985
+            Sustainable Mixed Farming Since 2016
           </p>
         </motion.div>
       </section>
@@ -142,7 +142,7 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
                 <p>
-                  AFAIHO FARMS was founded in 1985 by the Henderson family with
+                  AFIAHO FARMS was founded in 2016 by the Maxwell Bansah with
                   a simple vision: to provide the local community with fresh,
                   organic produce grown using sustainable farming methods. What
                   started as a small 20-acre operation has grown into a thriving
@@ -155,7 +155,7 @@ export default function About() {
                   products while minimizing our environmental impact.
                 </p>
                 <p>
-                  Today, AFAIHO FARMS is home to diverse crops, livestock, and a
+                  Today, AFIAHO FARMS is home to diverse crops, livestock, and a
                   thriving dairy operation. We're proud to employ local workers,
                   support the community, and contribute to the growing movement
                   toward sustainable, organic agriculture.
@@ -527,22 +527,22 @@ export default function About() {
             />
             <div className="flex-1">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                Maxwell
+                Maxwell Bansah 
               </h3>
               <p className="text-green-600 dark:text-green-400 font-semibold mb-4">
-                Founder & Head Farmer
+                Founder & CEO
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                John grew up on a small family farm and learned the value of
+              Maxwell Bansah grew up on a small family farm and learned the value of
                 hard work and sustainable agriculture from an early age. With a
-                degree in Agricultural Science and over 40 years of hands-on
+                degree in Agricultural Science and over 35 years of hands-on
                 experience, he's passionate about sharing his knowledge and love
                 for farming with the community.
               </p>
               <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
                 <div className="flex items-center gap-2">
                   <Users className="w-5 h-5 text-green-600" />
-                  <span>40+ Years Experience</span>
+                  <span>35+ Years Experience</span>
                 </div>
               </div>
             </div>

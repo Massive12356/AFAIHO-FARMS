@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Camera, Leaf, Users } from 'lucide-react';
 import { galleryImages } from '../data/galleryImages';
-import farmBackground from '../public/images/1.jpeg';
+import farmBackground from '../public/images/pepper2.jpg';
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [filter, setFilter] = useState<string>('All');
 
   // Updated categories to include all available categories
-  const categories = ['All', 'Farm', 'Workers', 'Produce', 'Livestock', 'Dairy', 'Poultry'];
+  const categories = ['All', 'Farm', 'Workers', 'Produce', 'Livestock', 'Dairy', 'Poultry', 'Machinery'];
 
   const filteredImages =
     filter === 'All'

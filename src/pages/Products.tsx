@@ -4,10 +4,12 @@ import { Search, Leaf, Wheat, Egg, Beef, Truck, Award, Shield, Calendar } from '
 import { products, Product } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import SectionTitle from '../components/SectionTitle';
-import bgImage from '../public/images/pImage.jpeg'
-import p1 from '../public/images/5.jpeg'
+import bgImage from '../public/images/pepper1.jpg'
+import p1 from '../public/images/29.jpeg'
 import p2 from '../public/images/8.jpeg'
-
+import machinery1 from '../public/images/machinery1.jpg'
+import machinery2 from '../public/images/machinery2.avif'
+import machinery3 from '../public/images/machinery3.avif'
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -36,32 +38,25 @@ export default function Products() {
   // Seasonal highlights data with images
   const seasonalHighlights = [
     {
-      season: 'spring',
-      name: 'Spring Harvest',
+      season: 'rainy',
+      name: 'Rainy Season Harvest',
       color: 'from-green-500 to-emerald-600',
-      image: 'https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&w=800',
-      products: ['Fresh lettuce and greens', 'Radishes and turnips', 'Fresh herbs', 'Pasture-raised eggs'],
+      image: machinery1, // Using local image instead of external URL
+      products: ['Mangoes and pawpaws', 'Pineapples and bananas', 'Okra and eggplant', 'Fresh vegetables'],
     },
     {
-      season: 'summer',
-      name: 'Summer Bounty',
+      season: 'dry',
+      name: 'Dry Season Bounty',
       color: 'from-amber-500 to-orange-600',
-      image: 'https://images.pexels.com/photos/1327838/pexels-photo-1327838.jpeg?auto=compress&cs=tinysrgb&w=800',
-      products: ['Tomatoes and peppers', 'Corn and beans', 'Berries and melons', 'Grass-fed beef'],
+      image: machinery2, // Using local image instead of external URL
+      products: ['Citrus fruits and pineapples', 'Root vegetables', 'Stored grains', 'Dried legumes'],
     },
     {
       season: 'garden',
       name: 'Garden Essentials',
       color: 'from-purple-500 to-indigo-600',
-      image: 'https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: machinery3, // Using local image instead of external URL
       products: ['Organic compost', 'Natural fertilizers', 'Seed varieties', 'Gardening tools'],
-    },
-    {
-      season: 'fall',
-      name: 'Fall Harvest',
-      color: 'from-orange-600 to-red-700',
-      image: 'https://images.pexels.com/photos/547263/pexels-photo-547263.jpeg?auto=compress&cs=tinysrgb&w=800',
-      products: ['Pumpkins and squash', 'Apples and pears', 'Root vegetables', 'Fresh dairy products'],
     },
   ];
 
@@ -214,9 +209,9 @@ export default function Products() {
         <div className="max-w-7xl mx-auto relative z-10">
           <SectionTitle
             title="Seasonal Highlights"
-            subtitle="What's fresh this season"
+            subtitle="What's fresh this season in Ghana"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
             {seasonalHighlights.map((season, index) => (
               <motion.div
                 key={season.season}
@@ -246,7 +241,7 @@ export default function Products() {
                       <h3 className="text-xl font-bold text-white">
                         {season.name}
                       </h3>
-                      <p className="text-green-100">Currently Available</p>
+                      <p className="text-green-100">Currently Available in Ghana</p>
                     </div>
                   </div>
                 </div>
@@ -654,11 +649,11 @@ export default function Products() {
             >
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                  S
+                  KA
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">
-                    Sarah Johnson
+                    Kwame Asante
                   </h4>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
                     Local Chef
@@ -666,7 +661,7 @@ export default function Products() {
                 </div>
               </div>
               <p className="text-gray-600 dark:text-gray-300 italic">
-                "The quality and freshness of GreenValley Farm products have
+                "The quality and freshness of AFIAHO FARMS products have
                 transformed my restaurant's menu. My customers constantly ask
                 about our suppliers, and I'm proud to recommend your farm."
               </p>
@@ -692,11 +687,11 @@ export default function Products() {
             >
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                  M
+                  AM
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">
-                    Michael Torres
+                    Adwoa Mensah
                   </h4>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
                     Weekly Customer
@@ -705,12 +700,12 @@ export default function Products() {
               </div>
               <p className="text-gray-600 dark:text-gray-300 italic">
                 "As a family of four, we've been getting our produce from
-                GreenValley for two years. The difference in taste and quality
+                AFIAHO FARMS for two years. The difference in taste and quality
                 compared to supermarket produce is remarkable. Our kids actually
                 ask for vegetables now!"
               </p>
               <div className="flex mt-4">
-                {[...Array(5)].map((_, i) => (
+                {[...Array(4)].map((_, i) => (
                   <svg
                     key={i}
                     className="w-5 h-5 fill-yellow-400 text-yellow-400"
@@ -719,6 +714,13 @@ export default function Products() {
                     <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                   </svg>
                 ))}
+                <svg
+                  key={4}
+                  className="w-5 h-5 text-yellow-400"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
               </div>
             </motion.div>
 
@@ -731,11 +733,11 @@ export default function Products() {
             >
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                  R
+                  KB
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 dark:text-white">
-                    Robert Chen
+                    Kofi Boateng
                   </h4>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
                     Health Enthusiast
@@ -743,7 +745,7 @@ export default function Products() {
                 </div>
               </div>
               <p className="text-gray-600 dark:text-gray-300 italic">
-                "After switching to GreenValley Farm products, I've noticed a
+                "After switching to AFIAHO FARMS products, I've noticed a
                 significant improvement in my family's health and energy levels.
                 Knowing exactly where our food comes from gives us peace of mind
                 we never had with store-bought produce."
