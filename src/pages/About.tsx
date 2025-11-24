@@ -3,7 +3,7 @@ import { Target, Eye, TrendingUp, Users, Leaf, TreePine, Wheat } from 'lucide-re
 import SectionTitle from '../components/SectionTitle';
 import p1 from '../public/images/29.jpeg'
 import p2 from '../public/images/24.jpg'
-import p3 from '../public/images/1.jpeg'
+import p3 from '../public/images/M165.jpg'
 import aboutImage from '../public/images/Banana1.jpg'
 
 export default function About() {
