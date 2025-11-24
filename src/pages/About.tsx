@@ -142,8 +142,8 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
                 <p>
-                  AFIAHO FARMS was founded in 2016 by the Maxwell Bansah with
-                  a simple vision: to provide the local community with fresh,
+                  AFIAHO FARMS was founded in 2016 by the Maxwell Bansah with a
+                  simple vision: to provide the local community with fresh,
                   organic produce grown using sustainable farming methods. What
                   started as a small 20-acre operation has grown into a thriving
                   200-acre mixed farming enterprise.
@@ -510,7 +510,7 @@ export default function About() {
         <div className="max-w-5xl mx-auto relative z-10">
           <SectionTitle
             title="Meet the Founder"
-            subtitle="The heart and soul behind GreenValley Farm"
+            subtitle="The heart and soul behind AFIAHO FARMS Farm"
           />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -527,17 +527,17 @@ export default function About() {
             />
             <div className="flex-1">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                Maxwell Bansah 
+                Maxwell Bansah
               </h3>
               <p className="text-green-600 dark:text-green-400 font-semibold mb-4">
                 Founder & CEO
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              Maxwell Bansah grew up on a small family farm and learned the value of
-                hard work and sustainable agriculture from an early age. With a
-                degree in Agricultural Science and over 35 years of hands-on
-                experience, he's passionate about sharing his knowledge and love
-                for farming with the community.
+                Maxwell Bansah grew up on a small family farm and learned the
+                value of hard work and sustainable agriculture from an early
+                age. With a degree in Agricultural Science and over 35 years of
+                hands-on experience, he's passionate about sharing his knowledge
+                and love for farming with the community.
               </p>
               <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
                 <div className="flex items-center gap-2">
