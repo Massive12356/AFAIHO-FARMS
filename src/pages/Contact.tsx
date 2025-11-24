@@ -161,7 +161,7 @@ export default function Contact() {
                       Email
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400">
-                      info@greenvalleyfarm.com
+                      info@afiahofarms.com
                     </p>
                   </div>
                 </div>
@@ -195,21 +195,21 @@ export default function Contact() {
                 <div className="flex space-x-4">
                   <a
                     href="#"
-                    className="w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-green-600 hover:text-white transition-colors"
+                    className="w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-green-600 dark:hover:bg-green-600 hover:text-white transition-colors"
                     aria-label="Facebook"
                   >
                     <Facebook className="w-6 h-6" />
                   </a>
                   <a
                     href="#"
-                    className="w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-green-600 hover:text-white transition-colors"
+                    className="w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-green-600 dark:hover:bg-green-600 hover:text-white transition-colors"
                     aria-label="Twitter"
                   >
                     <Twitter className="w-6 h-6" />
                   </a>
                   <a
                     href="#"
-                    className="w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-green-600 hover:text-white transition-colors"
+                    className="w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-green-600 dark:hover:bg-green-600 hover:text-white transition-colors"
                     aria-label="Instagram"
                   >
                     <Instagram className="w-6 h-6" />
